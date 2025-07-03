@@ -24,6 +24,14 @@ document.addEventListener('DOMContentLoaded', () => {
         let currentFilteredTopics = [];
         let lastDisplayedTopic = null;
 
+        // 친밀도 계층 정의
+        const intimacyHierarchy = {
+            '초면': ['초면'],
+            '애매한 사이': ['초면', '애매한 사이'],
+            '친해지는중': ['초면', '애매한 사이', '친해지는중'],
+            '절친': ['초면', '애매한 사이', '친해지는중', '절친']
+        };
+
         filterButtons.forEach(button => {
             button.addEventListener('click', () => {
                 const filter = button.dataset.filter;
@@ -56,10 +64,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         const getFilteredTopics = () => {
+            // 사용자가 선택한 친밀도에 따라 허용되는 모든 레벨을 가져옴
+            const allowedIntimacyLevels = selectedFilters.intimacy ? intimacyHierarchy[selectedFilters.intimacy] : null;
+
             return topics.filter(topic => {
+                // 관계 필터 로직은 동일
                 const relationshipOK = !selectedFilters.relationship || (topic.tags.relationship && topic.tags.relationship.includes(selectedFilters.relationship));
-                const intimacyOK = !selectedFilters.intimacy || (topic.tags.intimacy && topic.tags.intimacy.includes(selectedFilters.intimacy));
                 
+                // 새로 수정된 친밀도 필터 로직
+                const topicIntimacyTags = topic.tags.intimacy || [];
+                // 친밀도 필터가 선택되지 않았으면 통과
+                // 선택되었다면, 주제의 친밀도 태그 중 하나라도 허용된 레벨에 포함되는지 확인
+                const intimacyOK = !allowedIntimacyLevels ? true : topicIntimacyTags.some(tag => allowedIntimacyLevels.includes(tag));
+
+                // 분위기 필터 로직은 동일
                 const topicMoods = topic.tags.mood || [];
                 const moodOK = selectedFilters.mood.length === 0 ? true : selectedFilters.mood.some(selectedMood => topicMoods.includes(selectedMood));
 
