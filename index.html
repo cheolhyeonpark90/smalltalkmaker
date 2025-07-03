@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P2KQMW7N5R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-P2KQMW7N5R');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- 1. SEO를 위한 정보 -->
     <title>대화 주제 생성기 - 어색한 침묵을 깨는 질문들</title>
-    <meta name="description" content="어색한 침묵이 두려운 당신을 위한 필수 앱! 친구, 연인, 동료, 모임 등 어떤 상황에서도 대화를 시작하게 해주는 대화 주제 생성기. 밸런스게임, 19금, 진지한 대화 등 다양한 주제를 만나보세요.">
+    <meta name="description"
+        content="어색한 침묵이 두려운 당신을 위한 필수 앱! 친구, 연인, 동료, 모임 등 어떤 상황에서도 대화를 시작하게 해주는 대화 주제 생성기. 밸런스게임, 19금, 진지한 대화 등 다양한 주제를 만나보세요.">
     <meta name="keywords" content="대화 주제, 대화 주제 생성기, 아이스브레이킹, 밸런스게임, 소개팅 질문, 할말없을때, 어색할때, 19금 대화, 모임 대화">
 
     <!-- 2. 링크 공유(오픈그래프)를 위한 정보 -->
@@ -25,11 +37,12 @@
           "description": "어색한 침묵이 두려운 당신을 위한 필수 앱! 친구, 연인, 동료, 모임 등 어떤 상황에서도 대화를 시작하게 해주는 대화 주제 생성기. 밸런스게임, 19금, 진지한 대화 등 다양한 주제를 만나보세요."
         }
         </script>
-    
+
     <link href="./style.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body class="bg-beige text-dark-gray flex flex-col items-center justify-center min-h-screen p-4 sm:p-6">
 
     <main class="w-full max-w-2xl mx-auto">
@@ -60,7 +73,7 @@
                         <button class="filter-btn" data-filter="intimacy" data-value="절친">#절친</button>
                     </div>
                 </div>
-                 <div>
+                <div>
                     <h3 class="font-bold mb-3 text-lg">3. 어떤 분위기를 원하세요?</h3>
                     <div id="mood-filters" class="flex flex-wrap gap-2">
                         <button class="filter-btn" data-filter="mood" data-value="유머">#유머</button>
@@ -76,22 +89,32 @@
         </section>
 
         <section class="flex justify-center mb-8">
-            <button id="generate-btn" class="w-full sm:w-2/3 text-white bg-terracotta rounded-lg py-3 font-bold text-lg action-button">주제 생성하기</button>
+            <button id="generate-btn"
+                class="w-full sm:w-2/3 text-white bg-terracotta rounded-lg py-3 font-bold text-lg action-button">주제
+                생성하기</button>
         </section>
 
         <section id="result-area">
-            <div id="topic-card" class="min-h-[250px] rounded-xl shadow-lg p-6 sm:p-8 flex flex-col justify-between items-center text-center">
+            <div id="topic-card"
+                class="min-h-[250px] rounded-xl shadow-lg p-6 sm:p-8 flex flex-col justify-between items-center text-center">
                 <div id="card-content" class="flex-grow flex flex-col justify-center items-center w-full">
-                     <p id="placeholder-text" class="text-gray-500">어떤 대화를 시작해볼까요? <br> 위에서 상황을 선택하고 버튼을 눌러주세요.</p>
-                     <div id="topic-content" class="hidden w-full">
-                         <span id="topic-category" class="inline-block bg-gray-200 text-gray-700 text-sm font-bold px-3 py-1 rounded-full mb-4"></span>
-                         <p id="topic-text" class="text-xl sm:text-2xl font-semibold text-gray-800"></p>
-                     </div>
+                    <p id="placeholder-text" class="text-gray-500">어떤 대화를 시작해볼까요? <br> 위에서 상황을 선택하고 버튼을 눌러주세요.</p>
+                    <div id="topic-content" class="hidden w-full">
+                        <span id="topic-category"
+                            class="inline-block bg-gray-200 text-gray-700 text-sm font-bold px-3 py-1 rounded-full mb-4"></span>
+                        <p id="topic-text" class="text-xl sm:text-2xl font-semibold text-gray-800"></p>
+                    </div>
                 </div>
-                <div id="card-actions" class="w-full mt-6 flex flex-col space-y-2 sm:flex-row sm:space-y-0 sm:justify-center sm:space-x-2 hidden">
-                    <button id="next-topic-btn" class="w-full sm:w-auto bg-gray-200 text-gray-700 py-2 px-4 rounded-lg font-semibold action-button">다른 주제</button>
-                    <button id="share-btn" class="w-full sm:w-auto bg-blue-500 text-white py-2 px-4 rounded-lg font-semibold action-button">공유하기</button>
-                    <button id="save-image-btn" class="w-full sm:w-auto bg-green-500 text-white py-2 px-4 rounded-lg font-semibold action-button">이미지 저장</button>
+                <div id="card-actions"
+                    class="w-full mt-6 flex flex-col space-y-2 sm:flex-row sm:space-y-0 sm:justify-center sm:space-x-2 hidden">
+                    <button id="next-topic-btn"
+                        class="w-full sm:w-auto bg-gray-200 text-gray-700 py-2 px-4 rounded-lg font-semibold action-button">다른
+                        주제</button>
+                    <button id="share-btn"
+                        class="w-full sm:w-auto bg-blue-500 text-white py-2 px-4 rounded-lg font-semibold action-button">공유하기</button>
+                    <button id="save-image-btn"
+                        class="w-full sm:w-auto bg-green-500 text-white py-2 px-4 rounded-lg font-semibold action-button">이미지
+                        저장</button>
                 </div>
             </div>
         </section>
@@ -103,4 +126,5 @@
 
     <script src="./script.js"></script>
 </body>
+
 </html>
