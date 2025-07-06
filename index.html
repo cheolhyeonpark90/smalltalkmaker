@@ -2,7 +2,6 @@
 <html lang="ko">
 
 <head>
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P2KQMW7N5R"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -16,13 +15,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- 1. SEO를 위한 정보 -->
     <title>대화 주제 생성기 - 어색한 침묵을 깨는 스몰토크 주제들</title>
     <meta name="description"
         content="어색한 침묵이 두려운 당신을 위한 필수 앱! 친구, 연인, 동료, 모임 등 어떤 상황에서도 대화를 시작하게 해주는 대화 주제 생성기. 밸런스게임, 19금, 진지한 대화 등 다양한 주제를 만나보세요.">
     <meta name="keywords" content="대화 주제, 대화 주제 생성기, 아이스브레이킹, 밸런스게임, 소개팅 질문, 할말없을때, 어색할때, 19금 대화, 모임 대화, 스몰토크">
 
-    <!-- 2. 링크 공유(오픈그래프)를 위한 정보 -->
     <meta property="og:title" content="대화 주제 생성기 - 어색한 침묵을 깨는 스몰토크 주제들">
     <meta property="og:description" content="친구, 연인, 동료와 할 말이 없을 때? 어색한 순간을 즐겁게 바꿔줄 대화 주제를 즉시 생성해보세요!">
     <meta property="og:type" content="website">
@@ -122,6 +119,29 @@
             </div>
         </section>
 
+        <section class="w-full max-w-2xl mx-auto mt-12">
+            <div id="disqus_thread"></div>
+            <script>
+                /**
+                * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+                
+                var disqus_config = function () {
+                    // Use the canonical URL of your page
+                    this.page.url = 'https://smalltalkmaker.pages.dev/';
+                    // Use a unique identifier for this page
+                    this.page.identifier = 'smalltalkmaker-main-page'; 
+                };
+                
+                (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = 'https://smalltalkmaker.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </section>
         <footer class="text-center mt-10 text-gray-500 text-sm">
             <p>Made for better conversations.</p>
         </footer>
